@@ -1,0 +1,14 @@
+.postID {
+border-left-style: solid;
+border-width: 5px;
+background: #c6c6ec;
+background: -moz-linear-gradient(left,  #c6c6ec 0%, #c6c6ec 0%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #c6c6ec 0%,#c6c6ec 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #c6c6ec 0%,#c6c6ec 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6ec', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+padding: 1%;
+width: 5%;
+padding-top: 1%;
+float: left;
+}
+

@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="Stylesheet" href="css/fakeForumStyle.css">
   <title>Fake Forum</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
@@ -12,19 +13,36 @@
   
 </head>
 
+
+
 <body>
- <!--menu bar -->
- <div class="pure-menu pure-menu-horizontal">
+<!--menu bar -->
+ <div class="pure-menu pure-menu-horizontal" style="background: #c6c6ec;">
     <a href="index.html" class="pure-menu-heading pure-menu-link"> FakeForum </a>
     <ul class="pure-menu-list" >
-        <li class="pure-menu-item"><a href="#/forum.html" class="pure-menu-link"> Forum </a> </li>
+        <li class="pure-menu-item"><a href="forum.html" class="pure-menu-link"> Forum </a> </li>
     </ul>
  </div>
  
  <!-- all forum posts -->
-<div ng-controller="ForumPost as forum">
-{{forum.postName}} - {{forum.postBody}}
+<div ng-controller="ForumPost as forum" style="padding-left: 1%; padding-right: 1%;">
+<hr>
+
+<div class="postID" style="text-align: center;">
+<img ng-src="{{forum.posts[0].avatar}}"/>
+<p >{{forum.posts[0].postName}}</p>
+</div> 
+
+<p class="pure-u-8-24" style="padding: 1%;">
+{{forum.posts[0].postBody}}
+</p>
+<hr style="clear: left;">
+
+<div style="float:left; padding: .25%;"> reply </div>
+<div style="float:right; padding: .25%"> subscribe </div>
+
+<hr style="margin: 1%; clear: left;">
+
 </div>
- 
 </body>
 </html>
