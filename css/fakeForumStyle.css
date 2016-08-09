@@ -8,7 +8,21 @@ background: linear-gradient(to right,  #c6c6ec 0%,#c6c6ec 0%,#ffffff 100%); /* W
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6ec', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 padding: 1%;
 width: 5%;
+min-width: 100px;
 padding-top: 1%;
 float: left;
 }
 
+img{
+width: 75px;
+float: left;
+padding: 5px;
+text-align: center;
+}
+
+.button{
+    background-color: #c6c6ec;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+}
