@@ -24,6 +24,7 @@
     </ul>
  </div>
  
+ 
  <!-- all forum posts -->
 <div ng-controller="ForumPost as forum" style="padding-left: 1%; padding-right: 1%;">
     <div  ng-repeat="post in forum.posts">
@@ -38,12 +39,28 @@
         </p>
         <hr style="clear: left;">
 
-        <div style="float:left; padding: .5% .6%;"><a href="#" class="button"> reply </a></div>
-        <div style="float:right; padding: .5% .6%;"><a href="#" class="button">subscribe </a></div>
+        <div class="button" style="float:left; padding: .5% .6%;">reply </div>
+        <div class="button" style="float:right; padding: .5% .6%;">subscribe</div>
         <br><br>
-        <hr style="clear: right;">
+        <hr style="clear: left;">
         <br>
     </div>
 </div>
+
+<!-- Reply field -->
+<div ng-controller="ReplyForm as ctrl">
+
+<form style="text-align: center;" ng-submit="ctrl.$isValid && ctrl.reply()" novalidate>
+
+<textarea ng-model="ctrl.UserPost" rows = "7" cols="50" class="replyBox" required> </textarea><br>
+<input ng-model="ctrl.UserID" style="text-align: left;" type="text" required> </input>
+
+<input class="button" type="button" value="Preview">
+<input class="button" type="submit" value="Post">
+
+</form>
+</div>
+
+
 </body>
 </html>
