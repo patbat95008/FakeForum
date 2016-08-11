@@ -17,50 +17,60 @@
 
 <body>
 <!--menu bar -->
- <div class="pure-menu pure-menu-horizontal" style="background: #c6c6ec;">
-    <a href="index.html" class="pure-menu-heading pure-menu-link"> FakeForum </a>
-    <ul class="pure-menu-list" >
-        <li class="pure-menu-item"><a href="forum.html" class="pure-menu-link"> Forum </a> </li>
+
+ <div class="pure-menu pure-menu-horizontal" style="background: #c6c6ec; height:100px; position: relative;">
+     <img src="F:\WebPages\FakeForum\FakeForum\Images\FF.png" alt="FF" style="">
+    <a href="index.html" class="pure-menu-heading pure-menu-link" style="position: absolute; bottom: 0px;"> FakeForum </a>
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link" style="position: absolute; bottom: -90px; left: 150px;"> 
+        Forum </a> </li>
     </ul>
  </div>
- 
- 
+
+ <div>
  <!-- all forum posts -->
-<div ng-controller="ForumPost as forum" style="padding-left: 1%; padding-right: 1%;">
-    <div  ng-repeat="post in forum.posts">
-        <hr>
-        <div class="postID" style="text-align: center;">
-            <img ng-src="{{post.avatar}}"/>
-            <p >{{post.postName}}</p>
-        </div> 
+    <div class="pad" ng-controller="ForumPost as forum">
+        <div class="post" style="background-color: white;"  ng-repeat="post in forum.posts">
+            <hr>
+            <div class="postID" style="text-align: center;">
+                <img ng-src="{{post.avatar}}"/>
+                <p >{{post.postName}}</p>
+            </div> 
 
-        <p class="pure-u-8-24" style="padding: 1%;">
-            {{post.postBody}}
-        </p>
-        <hr style="clear: left;">
+            <p  style="padding: 1%; height= 200px;">
+                {{post.postBody}}
+            </p>
+            <hr style="clear: left;">
 
-        <div class="button" style="float:left; padding: .5% .6%;">reply </div>
-        <div class="button" style="float:right; padding: .5% .6%;">subscribe</div>
-        <br><br>
-        <hr style="clear: left;">
-        <br>
+            <div class="button" style="float:left; padding: .5% .6%;">reply </div>
+            <div class="button" style="float:right; padding: .5% .6%;">subscribe</div>
+            <br><br>
+            <hr style="clear: left;">
+            <br>
+        </div>
     </div>
-</div>
 
 <!-- Reply field -->
-<div ng-controller="ReplyForm as ctrl">
+    <div ng-controller="ReplyForm as ctrl" >
+        <div class="replyID" ng-controller="ForumPost as forum">
+        <p> <b>Logged in as: </b></p>
+        
+        <img ng-src="{{forum.posts[0].avatar}}">
+        
+        <p>{{forum.posts[0].postName}}</p>
+        </div>
+        
+        <form style="text-align: center; float: center;" ng-submit="ctrl.$isValid && ctrl.reply()" novalidate>
 
-<form style="text-align: center;" ng-submit="ctrl.$isValid && ctrl.reply()" novalidate>
+            <textarea ng-model="ctrl.UserPost" rows = "7" cols="50" class="replyBox" required> </textarea><br>
+            <b>name:  </b><input ng-model="ctrl.UserID" style="text-align: left;" type="text" required> </input>
 
-<textarea ng-model="ctrl.UserPost" rows = "7" cols="50" class="replyBox" required> </textarea><br>
-<input ng-model="ctrl.UserID" style="text-align: left;" type="text" required> </input>
+            <input class="button" type="button" value="Preview">
+            <input class="button" type="submit" value="Post">
 
-<input class="button" type="button" value="Preview">
-<input class="button" type="submit" value="Post">
-
-</form>
+        </form>
+    </div>
 </div>
-
 
 </body>
 </html>

@@ -1,3 +1,10 @@
+body{
+    background-image: url("F:/WebPages/FakeForum/FakeForum/Images/Pape.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding-bottom: 35px;
+}
+
 .postID {
     border-left-style: solid;
     border-width: 5px;
@@ -5,8 +12,25 @@
     padding: 1%;
     width: 5%;
     min-width: 100px;
+    min-height: 200px;
     padding-top: 1%;
     float: left;
+/* Gradient */
+/* FF3.6-15 */
+    background: -moz-linear-gradient(left,  #c6c6ec 0%, #c6c6ec 0%, #ffffff 100%); 
+/* Chrome10-25,Safari5.1-6 */
+    background: -webkit-linear-gradient(left,  #c6c6ec 0%,#c6c6ec 0%,#ffffff 100%);
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: linear-gradient(to right,  #c6c6ec 0%,#c6c6ec 0%,#ffffff 100%); 
+/* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6ec', endColorstr='#ffffff',GradientType=1 ); 
+}
+
+.replyID{
+float:left; 
+padding-left: 25px; 
+padding-right: 25px; 
+margin-left: 50px;
 /* Gradient */
 /* FF3.6-15 */
     background: -moz-linear-gradient(left,  #c6c6ec 0%, #c6c6ec 0%, #ffffff 100%); 
@@ -25,15 +49,26 @@ img{
     text-align: center;
 }
 
-div{
+.pad{
     padding-left: 1%; 
     padding-right: 1%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+}
+
+.post{
+    padding-left: 1%; 
+    padding-right: 1%;
+    padding-top: .5%;
+    border-style: solid;
+    border-color: #666;
+    border-width: 2px;
 }
 
 .replyBox{
     padding-left: 1%;
     padding-right: 1%;
-
+    resize: vertical;
     width: 55%;
     height: 150px;
     border-width: 2px;
